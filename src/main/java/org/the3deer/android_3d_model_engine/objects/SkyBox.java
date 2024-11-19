@@ -92,6 +92,20 @@ public class SkyBox {
         return cubeMap;
     }
 
+    public static SkyBox getSkyBox3() {
+        try {
+            return new SkyBox(new URI[]{
+                    URI.create("android://org.the3deer.dddmodel2/res/drawable/black.png"),
+                    URI.create("android://org.the3deer.dddmodel2/res/drawable/black.png"),
+                    URI.create("android://org.the3deer.dddmodel2/res/drawable/black.png"),
+                    URI.create("android://org.the3deer.dddmodel2/res/drawable/black.png"),
+                    URI.create("android://org.the3deer.dddmodel2/res/drawable/black.png"),
+                    URI.create("android://org.the3deer.dddmodel2/res/drawable/black.png")});
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     /**
      * skybox downloaded from https://github.com/mobialia/jmini3d
      *

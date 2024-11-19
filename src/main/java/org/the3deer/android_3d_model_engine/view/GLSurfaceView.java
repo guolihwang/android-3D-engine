@@ -1,6 +1,8 @@
 package org.the3deer.android_3d_model_engine.view;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.PixelFormat;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.Toast;

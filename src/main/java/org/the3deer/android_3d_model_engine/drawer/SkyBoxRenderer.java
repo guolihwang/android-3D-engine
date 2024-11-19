@@ -67,7 +67,7 @@ public class SkyBoxRenderer implements Renderer, MenuAdapter, PreferenceAdapter 
 
     // preferences
     private ListPreference skyboxList;
-    private String[] skyBoxesNames = new String[]{"None", "Sea", "Sand"};;
+    private String[] skyBoxesNames = new String[]{"None", "Sea", "Sand", "Black"};
 
     public boolean isEnabled() {
         return enabled;
@@ -95,7 +95,7 @@ public class SkyBoxRenderer implements Renderer, MenuAdapter, PreferenceAdapter 
 
     @BeanPostConstruct
     public void setUp(){
-        skyBoxes = new SkyBox[]{null, SkyBox.getSkyBox1(), SkyBox.getSkyBox2()};
+        skyBoxes = new SkyBox[]{null, SkyBox.getSkyBox1(), SkyBox.getSkyBox2(), SkyBox.getSkyBox3()};
         skyBoxes3D = new Object3DData[skyBoxes.length];
         Matrix.frustumM(projectionMatrix, 0, -screen.getRatio(), screen.getRatio(),
                 -1f, 1f, Constants.near, Constants.far);
@@ -120,7 +120,7 @@ public class SkyBoxRenderer implements Renderer, MenuAdapter, PreferenceAdapter 
         skyboxList.setTitle("Skybox");
 
         skyboxList.setEntries(this.skyBoxesNames);
-        skyboxList.setEntryValues(new String[]{"0", "1", "2"});
+        skyboxList.setEntryValues(new String[]{"0", "1", "2", "3"});
         skyboxList.setDefaultValue(String.valueOf(skyboxId));
 
         skyboxList.setSummary(skyboxId >= 0 && skyboxId < skyBoxesNames.length? skyBoxesNames[skyboxId] : "Unknown");

@@ -106,6 +106,7 @@ public class GUIDefault extends Widget implements EventListener, BeanManaged {
 
     public void setEnableFPS(boolean enable){
         this.enableFPS = enable;
+        this.info.setVisible(false);
         initFPS();
         propagate(new ChangeEvent(this));
     }

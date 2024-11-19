@@ -196,9 +196,9 @@ public class ModelEngine {
 
         // renderers
         beanFactory.add("30.renderer1.SkyBoxDrawer", SkyBoxRenderer.class);
-        beanFactory.add("30.renderer2.lightBulb", Point.build(Constants.VECTOR_ZERO)
-                .setId("light").setColor(Constants.COLOR_YELLOW));
-        beanFactory.add("30.renderer2.lightBulbDrawer", LightBulbRenderer.class);
+//        beanFactory.add("30.renderer2.lightBulb", Point.build(Constants.VECTOR_ZERO)
+//                .setId("light").setColor(Constants.COLOR_YELLOW));
+//        beanFactory.add("30.renderer2.lightBulbDrawer", LightBulbRenderer.class);
         beanFactory.add("30.renderer3.sceneRenderer", SceneRenderer.class);
 
         // debuggers

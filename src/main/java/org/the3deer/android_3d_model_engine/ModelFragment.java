@@ -15,6 +15,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import org.the3deer.android_3d_model_engine.drawer.SkyBoxRenderer;
+import org.the3deer.android_3d_model_engine.gui.GUIDefault;
 import org.the3deer.android_3d_model_engine.services.SceneLoader;
 import org.the3deer.android_3d_model_engine.view.GLFragment;
 import org.the3deer.android_3d_model_engine.view.GLSurfaceView;
@@ -87,6 +89,12 @@ public class ModelFragment extends Fragment {
         // restore state
         modelEngine.getPreferenceFragment().onRestoreInstanceState(savedInstanceState);
 
+        SkyBoxRenderer renderer = modelEngine.getBeanFactory().get("30.renderer1.SkyBoxDrawer", SkyBoxRenderer.class);
+        renderer.setSkyBox(3);
+
+        GUIDefault guiDefault = modelEngine.getBeanFactory().get("80.gui.default", GUIDefault.class);
+        guiDefault.setEnableFPS(false);
+
     }
 
     @Override
@@ -144,6 +152,7 @@ public class ModelFragment extends Fragment {
 
         // settings button
         final FloatingActionButton fab = getView().findViewById(R.id.button_settings);
+        fab.setVisibility(View.GONE);
         fab.setOnClickListener(view -> {
 
             // check
